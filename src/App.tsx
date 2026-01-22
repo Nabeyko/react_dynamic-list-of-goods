@@ -14,7 +14,12 @@ export const App: React.FC = () => {
       <button
         type="button"
         data-cy="all-button"
-        onClick={() => goodsAPI.getAll().then(setGoods)}
+        onClick={() => {
+          goodsAPI
+            .getAll()
+            .then(setGoods)
+            .catch(() => alert('Loading products soon'));
+        }}
       >
         Load all goods
       </button>
@@ -22,7 +27,12 @@ export const App: React.FC = () => {
       <button
         type="button"
         data-cy="first-five-button"
-        onClick={() => goodsAPI.get5First().then(setGoods)}
+        onClick={() => {
+          goodsAPI
+            .get5First()
+            .then(setGoods)
+            .catch(() => alert('Loading products soon'));
+        }}
       >
         Load 5 first goods
       </button>
@@ -30,7 +40,12 @@ export const App: React.FC = () => {
       <button
         type="button"
         data-cy="red-button"
-        onClick={() => goodsAPI.getRedGoods().then(setGoods)}
+        onClick={() => {
+          goodsAPI
+            .getRedGoods()
+            .then(setGoods)
+            .catch(() => alert('Loading products soon'));
+        }}
       >
         Load red goods
       </button>
